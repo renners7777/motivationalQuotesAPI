@@ -38,6 +38,8 @@ h1{
 p{
   max-width: 500px;
   color: bisque;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 

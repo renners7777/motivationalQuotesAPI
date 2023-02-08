@@ -1,5 +1,3 @@
-const { myArr } = require('./my-array.js')
-
 document.querySelector('button').addEventListener('click', getFetch)
 
 function getFetch(){
@@ -12,14 +10,11 @@ function getFetch(){
         .then(function (data) {
             console.log(data)
             
-            Object.entries(data).forEach(([key, value]) => {
-                console.log(`${key} ${value}`);
-            })
-        
-            //document.querySelector('p').innerText =  
+            const randomItem = data[Math.floor(Math.random() * data.length)]
 
-        // .catch((err) => {
-        //     console.log(`error ${err}`)
-        // });
-        // })
-        })}
+            document.querySelector('p').innerText = randomItem.text;
+            
+        trycatch((err) => {
+            console.log(`error ${err}`)
+        });
+    })}
