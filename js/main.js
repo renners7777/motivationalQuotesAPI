@@ -1,23 +1,25 @@
+const { myArr } = require('./my-array.js')
+
 document.querySelector('button').addEventListener('click', getFetch)
 
 function getFetch(){
-    const url = "https://api.api-ninjas.com/v1/quotes?category=inspirational"
+    const url = "https://type.fit/api/quotes";
 
-    return fetch(url, {
-        headers: {
-            'x-api-key': '1lXZquhMgqfLl9lHSNF9FjkZ7yDnIXfWSwYxW0dC'
-        },
-    })
-        .then(res => res.json()) // parse response as JSON
-        .then(data => {
-            console.log(data)
-
-            document.querySelector('p').innerText = data
+    fetch(url)
+        .then(function (response) {
+            return response.json();
         })
-        .catch(err => {
-            console.log(`error ${err}`)
-        });
+        .then(function (data) {
+            console.log(data)
+            
+            Object.entries(data).forEach(([key, value]) => {
+                console.log(`${key} ${value}`);
+            })
+        
+            //document.querySelector('p').innerText =  
 
-}
-      
-
+        // .catch((err) => {
+        //     console.log(`error ${err}`)
+        // });
+        // })
+        })}
