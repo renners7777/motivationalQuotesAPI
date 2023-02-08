@@ -12,8 +12,7 @@ function getFetch(){
             
             const randomItem = data[Math.floor(Math.random() * data.length)]
 
-            document.querySelector('p').innerText = randomItem.text;
-            
+            document.querySelector('p').innerHTML = `${randomItem.text} ${randomItem.author}`;
         trycatch((err) => {
             console.log(`error ${err}`)
         });
